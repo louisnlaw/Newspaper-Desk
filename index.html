@@ -52,12 +52,12 @@
 <pre><code>file:///tmp/weather.png</code></pre>
 <p>You don't need to do anything regarding this code UNLESS you want more than one cities being displayed in the same time. To make it more clear, if you show reports for two cities, one of their icon file "weather.png" has to be renamed differently as you prefer but must be consistent for both the script of City Main Page and the Weather Icon. Otherwise both cities will exhibit the same weather icon.</p>
 
-<h3>Monthly Calendar</h3>
+<h5>Monthly Calendar</h5>
 <pre><code>cal | GREP_COLOR="44" grep --color=always -C6 -E "(^| )$(date +%e)($| )" | GREP_COLOR="8" grep --color=always -C6 -E "(^| )$(date +'%B %Y')($| )"
 —————
 cal | GREP_COLOR="47" grep --color=always -C6 -E "(^| )$(date +%e)($| )" | GREP_COLOR="8" grep --color=always -C6 -E "(^| )$(date +'%B %Y')($| )"</code></pre>
 <p>The foreground and background colours correspond to the codes as in the table below, change it to your delight:</br>
-foreground colors：</br>
+<b>foreground colors：</b></br>
 30 black</br>
 31 red</br>
 32 green</br>
@@ -67,7 +67,7 @@ foreground colors：</br>
 36 cyan</br>
 37 white</br>
 
-background colors：</br>
+<b>background colors：</b></br>
 40 black</br>
 41 red</br>
 42 green</br>
