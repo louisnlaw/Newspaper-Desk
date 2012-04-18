@@ -78,6 +78,39 @@ cal | GREP_COLOR="47" grep --color=always -C6 -E "(^| )$(date +%e)($| )" | GREP_
 47 white</code></pre>
 <p>Keep in mind that you should select one of the fixed-width fonts to place all the date numbers neatly in line with each other.</p>
 
+<h5>RSS Subscription</h5>
+<pre><code>URL="http://headlines.yahoo.co.jp/rss/cnn_c_int.xml"
+maxLength="500"
+start="3"
+end="9"
+
+curl --silent "$URL" |
+sed -e :a -e '$!N;s/\n//;ta' |
+sed -e 's/<title>/\
+<title>/g' |
+sed -e 's/<\/title>/<\/title>\
+/g' |
+sed -e 's/<description>/\
+<description>/g' |
+sed -e 's/<\/description>/<\/description>\
+/g' |
+grep -E '(title>|description>)' |
+sed -n "$start,$"'p' |
+sed -e 's/<title>//' |
+sed -e 's/<\/title>//' |
+sed -e 's/<description>/   /' |
+sed -e 's/<\/description>//' |
+sed -e 's/<!\[CDATA\[//g' |
+sed -e 's/\]\]>//g' |
+sed -e 's/&lt;/</g' |
+sed -e 's/&gt;/>/g' |
+sed -e 's/<[^>]*>//g' |
+cut -c 1-$maxLength |
+head -$end |
+sed G |
+fmt</code></pre>
+<p>Replace the URL with your favourite feeds.</p>
+
 <h3>Support or Contact</h3>
 
 <p>Having questions with shell codes? You may find more scripts on <a href="http://www.macosxtips.co.uk/geeklets/collections/">Geeklets</a> website. Or you can send me an <a href="mailto:limo618@gmail.com">email</a> for further discussion.
