@@ -53,7 +53,7 @@
 <p>You don't need to do anything regarding this code UNLESS you want more than one cities being displayed in the same time. To make it more clear, if you show reports for two cities, one of their icon file "weather.png" has to be renamed differently as you prefer but must be consistent for both the script of City Main Page and the Weather Icon. Otherwise both cities will exhibit the same weather icon.</p>
 
 <h5>Monthly Calendar</h5>
-<pre><code>cal | GREP_COLOR="44" grep --color=always -C6 -E "(^| )$(date +%e)($| )" | GREP_COLOR="8" grep --color=always -C6 -E "(^| )$(date +'%B %Y')($| )"
+<pre><code>cal | GREP_COLOR="43" grep --color=always -C6 -E "(^| )$(date +%e)($| )" | GREP_COLOR="8" grep --color=always -C6 -E "(^| )$(date +'%B %Y')($| )"
 —————
 cal | GREP_COLOR="47" grep --color=always -C6 -E "(^| )$(date +%e)($| )" | GREP_COLOR="8" grep --color=always -C6 -E "(^| )$(date +'%B %Y')($| )"</code></pre>
 <p>The date "today" can be highlighted with the foreground and background colours corresponding to the codes in the table below, change it to your delight:</p>
@@ -76,6 +76,7 @@ cal | GREP_COLOR="47" grep --color=always -C6 -E "(^| )$(date +%e)($| )" | GREP_
 45 magenta</br>
 46 cyan</br>
 47 white</code></pre>
+<p>Keep in mind that you should select one of the fixed-width fonts to place all the date numbers neatly in line with each other.</p>
 
 <h3>Support or Contact</h3>
 
